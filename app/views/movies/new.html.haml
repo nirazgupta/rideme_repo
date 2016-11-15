@@ -1,0 +1,41 @@
+%h2 Ride Me: Create your profile
+
+= form_tag movies_path, :method => :post do
+
+  = label :movie, :FirstName, 'First Name'
+  = text_field :movie, :FirstName
+  %br/
+  = label :movie, :MiddleInitial, 'MI'
+  = text_field :movie, :MiddleInitial
+  %br/
+  = label :movie, :LastName, 'Last Name'
+  = text_field :movie, :LastName
+  %br/
+  = label :movie, :CarOwnerID, 'Choose Your Car'
+  = text_field :movie, :CarOwnerID
+  %br/
+  = label :movie, :DateOfBirth, 'D.O.B'
+  = text_field :movie, :DateOfBirth
+  %br/
+  = label :movie, :EmailAddress, 'Email'
+  = text_field :movie, :EmailAddress
+  %br/
+  = label :movie, :PostalAddress, 'Address'
+  = text_field :movie, :PostalAddress
+  %br/
+  = label :movie, :City, 'City'
+  = text_field :movie, :City
+  %br/
+  = label :movie, :State, 'State'
+  = text_field :movie, :State
+  %br/
+  = label :movie, :Zip, 'Zip'
+  = text_field :movie, :Zip
+  %br/
+  = label :movie, :PhoneNumber, 'Phone'
+  = text_field :movie, :PhoneNumber
+  %br/
+  = submit_tag 'Save Changes'
+  %br
+  %br
+  = link_to 'Cancel', movies_path

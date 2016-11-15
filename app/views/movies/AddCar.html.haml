@@ -1,0 +1,32 @@
+%h2 Ride Me: Add your car
+
+= form_tag movies_path, :method => :post do
+
+  = label :movie, :CarMake, 'Make'
+  = text_field :movie, :CarMake
+  %br/
+  = label :movie, :CarModel, 'Model'
+  = text_field :movie, :CarModel
+  %br/
+  = label :movie, :CarYear, 'Year'
+  = text_field :movie, :CarYear
+  %br/
+  = label :movie, :CarColor, 'Color'
+  = text_field :movie, :CarColor
+  %br/
+  = label :movie, :CarLicense, 'Car License'
+  = text_field :movie, :CarLicense
+  %br/
+  = label :movie, :CarLicenseState, 'Lic State'
+  = text_field :movie, :CarLicenseState
+  %br/
+  = label :movie, :CarMPG, 'Car MPG'
+  = text_field :movie, :CarMPG
+  %br/
+  = label :movie, :CarOwnerID, 'Your Owner ID'
+  = text_field :movie, :CarOwnerID
+ 
+  = submit_tag 'Save Changes'
+  %br
+  %br
+  = link_to 'Cancel', movies_path

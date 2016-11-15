@@ -1,0 +1,31 @@
+%h1 Events
+= form_for(Event.new) do
+
+  = label :event, :EventDate, 'Date'
+  = date_field :event, :EventDate
+  %br/
+  = label :event, :EventLocationGPS, 'GPS'
+  = text_field :event, 'EventLocationGPS'
+  %br/
+  = label :event, :EventLocationFriendly, 'Location Friendly'
+  = select :event, :EventLocationFriendly, ['Yes','No']
+  %br/
+  = label :event, :FromLocation, 'Departure Location'
+  = text_field :event, 'FromLocation'
+  %br/
+  = label :event, :ToLocation, 'Destination'
+  = text_field :event, :ToLocation
+  %br/
+  = label :event, :QuantityCanCarry, 'Capacity'
+  = text_field :event, 'Capacity'
+  %br/
+  = label :event, :OneWayTrip, 'One way trip'
+  = select :event, :OneWayTrip, ['Yes','No']
+  %br/
+  = label :event, :EventBufferTime, 'Duration'
+  = text_field :event, 'EventBufferTime'
+  %br/
+  = label :event, :EventComments, 'Comment'
+  = text_field :event, 'EventComments'
+  %br/
+  = submit_tag 'Submit'

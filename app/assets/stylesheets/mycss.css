@@ -1,0 +1,16 @@
+.login_top_menu{
+    background-color : red;
+}
+
+.login_create_new{
+    width:65%;
+    height : auto;
+    background-color : #ffd480 ;
+    float: right;
+}
+.login_create_new_img{
+    float: left;
+}
+body{
+    background-color : #ffeecc;
+}

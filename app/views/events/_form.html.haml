@@ -1,0 +1,14 @@
+.fieldset
+  = simple_form_for(Event.new) do |f|
+    = f.input :EventDate, label: "Event Date"
+    = f.input :EventLocationGPS, label: "GPS"      
+    = f.input :EventLocationFriendly,   label: "----"
+    = f.input :FromLocation,  label: "Starting point"
+    = f.input :ToLocation,    label: "Destination"
+    = f.input :QuantityCanCarry,  label: "Capacity"
+    = f.input :EventBufferTime, label: "Duration"
+    = f.input :EventComments, label: "Comment"
+    = f.button :submit
+   
+        
+

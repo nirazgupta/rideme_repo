@@ -1,0 +1,71 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.login_top_menu{
+    background-color : orange;
+}
+
+.login_top_menu_sign_in{
+    margin-top : 9px;
+}
+
+.login_top_menu_btn{
+   margin-left: 30px;
+}
+
+.login_create_new{
+    width:65%;
+    height : auto;
+    background-color : #ffd480 ;
+    float: right;
+}
+.login_create_new_img{
+    float: left;
+}
+body{
+    background-color : #ffeecc;
+    text-align : center;
+}
+input{
+    
+}
+#test{
+  background-color : white;
+  width: 200px;
+  height:200px;
+}
+
+
+.nav.navbar-default{
+   
+}
+.nav.navbar-nav{
+    float:right;
+     
+}
+
+#main{
+    padding-left:0px;
+}
+#events{
+   border: 1px solid black;
+}
+.tablehead th{
+    //text-align:left;
+    padding:10px;
+    background-color : orange;
+    border: 1px solid black;
+}
+
+.tablebody td{
+    //text-align:left;
+    width:100%;
+    padding:10px;
+    background-color : yellow;
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+
+
+
