@@ -1,0 +1,2 @@
+class TblwaitlistsController < ApplicationController
+end

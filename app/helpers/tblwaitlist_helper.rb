@@ -1,0 +1,2 @@
+module TblwaitlistHelper
+end

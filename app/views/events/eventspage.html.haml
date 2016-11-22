@@ -1,19 +1,22 @@
 %h1 Events
-%table#events
-  %thead.tablehead
-    %tr
+%table#events 
+  %thead.tablehead 
+    %tr   
+      %th ID# 
       %th Date
       %th GPS
-      %th Event Location Friendly
-      %th Departure Location 
+      %th Location
+      %th Meeting Point 
       %th Destination
-      %th Capacity
-      %th One way trip?
-      %th Duration
+      %th Can hold
+      %th One way?
+      %th Get here by
       %th Comments
+      %th More Details
   %tbody
   -@events.each do |event|
     %tr.tablebody
+      %td= event.id
       %td= event.EventDate
       %td= event.EventLocationGPS
       %td= event.EventLocationFriendly
@@ -23,5 +26,9 @@
       %td= event.OneWayTrip
       %td= event.EventBufferTime
       %td= event.EventComments
+      %td= link_to "Details : #{event.id}", event_path(event)
       
-= link_to 'Add new Event', new_event_path
+%AddSection
+= link_to 'New Event', new_event_path
+
+

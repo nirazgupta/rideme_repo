@@ -1,5 +1,6 @@
 .fieldset
   = simple_form_for(Event.new) do |f|
+    = f.input :EventName, label: "Event Name"
     = f.input :EventDate, label: "Event Date"
     = f.input :EventLocationGPS, label: "GPS"      
     = f.input :EventLocationFriendly,   label: "----"

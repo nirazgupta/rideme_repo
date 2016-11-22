@@ -1,12 +1,13 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
-     t.datetime 'EventDate'
+     t.datetime :EventDate
+     t.number 'EventID'
      t.string 'EventLocationGPS'
      t.string 'EventLocationFriendly'
      t.string 'ToLocation'
      t.string 'FromLocation'
-     t.string 'QuantityCanCarry'
+     t.integer 'QuantityCanCarry'
      t.string 'OneWayTrip'
      t.integer 'EventBufferTime'
      t.string 'EventComments'

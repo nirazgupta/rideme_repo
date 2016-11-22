@@ -16,107 +16,110 @@
     = csrf_meta_tags
     = javascript_include_tag 'rails'
   %body
+  %br/
+  %br/
+  .MyIndexBasicsA{ :style => "width: 50%;" } 
   .divTable
   .divTableBody
-    .login_top_menu
-      %img{:height => "140", :src => asset_path("my_tweet.png"), :width => "440"}/
-      %div{:style => "float : right"}
-        %br/
-        .login_top_menu_sign_in
-        = form_for(:user, :url => session_path(:user)) do |f|
-          = f.label "Email"
-          = f.text_field :email
-          = f.label "Password"
-          = f.password_field :password
-          %br
-          .login_top_menu_btn
-            = f.check_box :remember_me
-            = f.label :remember_me
-            = link_to "Forgot your password?", new_password_path(:user)
-            %br
-            = f.submit 'Sign in'
-            
     %br/
     %div
-    .login_create_new_img
-      %img{:src =>  asset_path("car2.jpg"), :width => "300%"}/
     .login_create_new
-      %center
+      %div{ :color => "black"}
+      %br/
+      %br/
+      %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+      %left
         %h1 Sign In
         %div
-          %label First Name
-          %input{:type => "text"}/
-          %label Middle Initial
+          %label Full Name:
+          %input{:type => "text",:size => "40"}/
           %input{:maxlength => "2", :size => "2", :type => "text"}/
-          %label Last Name
           %input{:type => "text"}/
         %br/
         %div
-          %label Email Address
-          %input{:size => "85", :type => "email"}/
+          %label Email    :
+          %input{:size => "77", :type => "email"}/
         %br/
         %div
-          %label Phone Number
-          %input{:type => "text"}/
-          %label Address :
-          %input{:size => "50", :type => "text"}/
-        %br/
-        %div
-          %label City
-          %input{:size => "22", :type => "text"}/
-          %label State
+          %label Phone     :
+          %input{:type => "text",:size =>"10"}/
+          %label Address   :
+          %input{:size => "25", :type => "text"}/
+          %label City/State/Zip
+          %input{:size => "10", :type => "text"}/
           %input{:maxlength => "2", :size => "2", :type => "text"}/
-          %label Zip Code
-          %input{:size => "20", :type => "text"}/
+          %label -
+          %input{:size => "5", :type => "text"}/
+        %br/
+        %div
         %br/
         %div
           %label Create Password
-          %input{:size => "31", :type => "password"}/
+          %input{:size => "22", :type => "password"}/
           %label Retype Password
-          %input{:size => "33", :type => "password"}/
+          %input{:size => "22", :type => "password"}/
         %br/
         %div
           %label Date of Birth
-          %input#datePicker{:size => "85"}/
-          %br/
-          %label Are You a car Owner ?
+          = date_field :event, :EventDate
+          %label Car Owner ?
           %select#carOwnerSelect{:onchange => "carOwner()"}
             %option{:value => "Y"} Yes
             %option{:selected => "selected", :value => "N"} No
         %br/
         #not_A_car_owner
-          %button{:onclick  => "carOwner()",:style => "width : 25% ; background-color : green;"} Submit
-          %button{:style => "width : 25% ; background-color : red;"} Cancel
+          %button{:onclick  => "carOwner()",:style => "width : 25% ; background-color : lawngreen;"} Submit
+          %button{:style => "width : 25% ; background-color : orange;"} Cancel
         %br/
         #Car_owner
           %div
-            %label Car Model
-            %input{:type => "text"}/
-            %label Car Type
+            %label Make?
             %select
-              %option Sedan
-              %option Suv
-              %option Subcompact
-              %option Compact
-              %option Mid-size
-              %option Full-size
-            %label Car Year
+              %option Acura
+              %option Alfa Romeo
+              %option Aston Martin
+              %option Audi
+              %option Bentley Motors
+              %option BMW
+              %option Buick
+              %option Cadillac
+              %option Chevrolet
+              %option Chrysler
+              %option Dodge
+              %option Ferrari
+              %option Fiat
+              %option Ford
+            %label Model?
+            %select
+              %option Camry
+              %option Edge
+              %option Corvette
+            %label Carries?
+            %select
+              %option 1
+              %option 2
+              %option 3
+              %option 4
+              %option 5
+              %option 5+
+            %label Year
             %input{:maxlength => "4", :size => "4", :type => "text"}/
           %br/
           %div
-            %label Car Vin Number
-            %input{:type => "text"}/
-            %label Car plate number
-            %input{:type => "text"}/
+            %label VIN
+            %input{:type => "text", :size=>"20"}/
+            %label Plates
+            %input{:type => "text",:size =>"5"}/
+            %label State
+            %input{:maxlength => "2", :size => "2", :type => "text"}/
           %br/
           %div
             %label Driver Licence Number
-            %input{:size => "50", :type => "text"}/
+            %input{:size => "35", :type => "text"}/
           %br/
           %div
-            %button{:style => "width : 25% ; background-color : green;"} Submit
-            %button{:style => "width : 25% ; background-color : red;"} Cancel
-            
+            %button{:style => "width : 25% ; background-color : lawngreen;"} Submit
+            %button{:style => "width : 25% ; background-color : orange;"} Cancel
     :javascript
       $('#Car_owner').hide();
       $("#datePicker").datepicker();

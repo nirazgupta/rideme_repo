@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #events th{
     text-align:left;
-    padding:10px;
+    padding:10px;   
 }
+
 
 .tablehead th{
     padding:10px;
@@ -12,4 +13,10 @@
    padding: 10px;
 }
 
+
+.body
+{
+    background-color:red;
+    width:200px;
+    text-align:right;
 }

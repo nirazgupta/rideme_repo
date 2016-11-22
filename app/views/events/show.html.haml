@@ -1,0 +1,22 @@
+%div
+.MoreAboutEvent
+ %h2 Event # #{@event.id} Details
+ %img{:src =>  asset_path("checkMark.png"), :width => "10%",:height => "5%", :float => "right"}/
+ %br/
+ %br/
+ %b On : #{@event.EventDate} , you will travel from #{@event.FromLocation} to #{@event.ToLocation}  (#{@event.EventLocationFriendly})  
+ %br/
+ %ul
+ %li Availability: #{@event.QuantityCanCarry}
+ %li Going one way? #{@event.OneWayTrip}
+ %li Arrive #{@event.EventBufferTime} min(s) prior
+ %li  Meet driver @ coordinates#  : #{@event.EventLocationGPS}
+ %h5 Owner Comments: #{@event.EventComments}
+%br/
+= link_to 'Back to Events', eventspage_path
+%br/
+- if user_signed_in?
+ - if @event.user_id == current_user.id
+  = link_to 'Edit Event Details', edit_event_path(@event)
+  = link_to 'Delete Event', event_path(@event), :method => :delete
+= submit_tag 'Join!'
