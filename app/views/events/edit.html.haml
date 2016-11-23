@@ -1,0 +1,31 @@
+%h2 Edit Event Details
+
+= form_tag event_path(@event), :method => :put do
+
+  = label :event, :EventDate, 'Date'
+  = date_select :Event, :EventDate
+  %br/
+  = label :event, :Location, 'Location'
+  = text_field :Event, 'Location'
+  %br/
+  = label :event, :FromLocation, 'Meeting Point'
+  = text_field :Event, 'Meeting Point'
+  %br/
+  = label :event, :ToLocation, 'Destination'
+  = text_field :Event, 'Destination'
+  %br/
+  = label :event, :QuantityCanCarry, 'Can hold'
+  = text_field :Event, 'Can hold'
+  %br/
+  = label :event, :OneWayTrip, 'One way?'
+  = text_field :Event, 'One way?'
+  %br/
+  = label :event, :EventBufferTime, 'Get here by'
+  = text_field :Event, 'Get here by'
+  %br/
+  = label :event, :EventComments, 'Comments'
+  = text_field :Event, 'Comments'
+  %br/
+  = submit_tag 'Save Changes'
+  
+  = link_to 'Cancel', event_path(@event)
