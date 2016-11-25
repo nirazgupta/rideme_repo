@@ -1,0 +1,159 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    //%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    //%title Ride Me!!
+    //%link{:href => "http://cdn.syncfusion.com/13.2.0.29/js/web/flat-azure/ej.web.all.min.css", :rel => "stylesheet"}/
+    //%script{:src => "https://code.jquery.com/jquery-1.10.2.min.js"}
+    //%script{:src => "http://cdn.syncfusion.com/js/assets/external/jquery.easing.1.3.min.js"} 
+    //%script{:src => "http://cdn.syncfusion.com/js/assets/external/jquery.globalize.min.js"}
+    //%script{:src => "http://cdn.syncfusion.com/js/assets/external/jsrender.min.js"}
+    //%script{:src => "http://cdn.syncfusion.com/13.2.0.29/js/web/ej.web.all.min.js"} 
+    //%link{:href => "http://www.w3schools.com/lib/w3.css", :rel => "stylesheet"}/
+    //%link{:href => "app/assets/stylesheets/mycss.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = javascript_include_tag 'rails'
+  %body
+  %br/
+  %br/
+  .MyIndexBasicsA{ :style => "width: 50%;" } 
+  .divTable
+  .divTableBody
+    %br/
+    %div
+    .login_create_new
+      %div{ :color => "black"}
+      %br/
+      %br/
+      %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+      %left
+        %h1 Sign Up
+        %div
+          %label Full Name:
+          %input{:type => "text",:size => "40"}/
+          %input{:maxlength => "2", :size => "2", :type => "text"}/
+          %input{:type => "text"}/
+        %br/
+        %div
+          %label Email    :
+          %input{:size => "77", :type => "email"}/
+        %br/
+        %div
+          %label Phone     :
+          %input{:type => "text",:size =>"10"}/
+          %label Address   :
+          %input{:size => "25", :type => "text"}/
+          %label City/State/Zip
+          %input{:size => "10", :type => "text"}/
+          %input{:maxlength => "2", :size => "2", :type => "text"}/
+          %label -
+          %input{:size => "5", :type => "text"}/
+        %br/
+        %div
+        %br/
+        %div
+          %label Create Password
+          %input{:size => "22", :type => "password"}/
+          %label Retype Password
+          %input{:size => "22", :type => "password"}/
+        %br/
+        %div
+          %label Date of Birth
+          = date_field :event, :EventDate
+          %label Car Owner ?
+          %select#carOwnerSelect{:onchange => "carOwner()"}
+            %option{:value => "Y"} Yes
+            %option{:selected => "selected", :value => "N"} No
+        %br/
+        #not_A_car_owner
+          %button{:onclick  => "carOwner()",:style => "width : 25% ; background-color : lawngreen;"} Submit
+          %button{:style => "width : 25% ; background-color : orange;"} Cancel
+        %br/
+        #Car_owner
+          %div
+            %label Make?
+            %select
+              %option Acura
+              %option Alfa Romeo
+              %option Aston Martin
+              %option Audi
+              %option Bentley Motors
+              %option BMW
+              %option Buick
+              %option Cadillac
+              %option Chevrolet
+              %option Chrysler
+              %option Dodge
+              %option Ferrari
+              %option Fiat
+              %option Ford
+            %label Model?
+            %select
+              %option Camry
+              %option Edge
+              %option Corvette
+            %label Carries?
+            %select
+              %option 1
+              %option 2
+              %option 3
+              %option 4
+              %option 5
+              %option 5+
+            %label Year
+            %input{:maxlength => "4", :size => "4", :type => "text"}/
+          %br/
+          %div
+            %label VIN
+            %input{:type => "text", :size=>"20"}/
+            %label Plates
+            %input{:type => "text",:size =>"5"}/
+            %label State
+            %input{:maxlength => "2", :size => "2", :type => "text"}/
+          %br/
+          %div
+            %label Driver Licence Number
+            %input{:size => "35", :type => "text"}/
+          %br/
+          %div
+            %button{:style => "width : 25% ; background-color : lawngreen;"} Submit
+            %button{:style => "width : 25% ; background-color : orange;"} Cancel
+    :javascript
+      $('#Car_owner').hide();
+      $("#datePicker").datepicker();
+      $(document).ready(function() {
+      $('#Car_owner').hide();
+      $( "#datepicker" ).datepicker();
+      });
+      function login(){
+        var credentials = $('#password').val();
+        alert(credentials);
+        //+ " and the password is : "$('#password').val());
+      }
+      
+
+      //function plusDivs(n) {
+      //    showDivs(slideIndex += n);
+      //}
+
+      //function showDivs(n) {
+      //    var i;
+      //    var x = document.getElementsByClassName("mySlides");
+      //    if (n > x.length) { slideIndex = 1 }
+      //    if (n < 1) { slideIndex = x.length }
+      //    for (i = 0; i < x.length; i++) {
+      //        x[i].style.display = "none";
+      //    }
+      //    x[slideIndex - 1].style.display = "block";
+      //}
+      function carOwner() {
+          if ($('#carOwnerSelect').val() == "Y") {
+              $('#not_A_car_owner').hide();
+              $('#Car_owner').show();
+          } else {
+              $('#not_A_car_owner').show();
+              $('#Car_owner').hide();
+          }
+      }
