@@ -9,6 +9,7 @@ Myrottenpotatoes::Application.routes.draw do
   resources :events
   resources :users
   get '/eventspage' => 'events#eventspage'
+  get '/homepage' => 'events#homepage'
   root 'events#index'
 end
 

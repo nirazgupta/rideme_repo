@@ -1,0 +1,141 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %link{:href => "http://www.w3schools.com/lib/w3.css", :rel => "stylesheet"}/
+    //%link{:href => "app/assets/stylesheets/mycss.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = javascript_include_tag 'rails'
+    :css
+      .mySlides {
+          display: none;
+          border-left: 6px solid red;
+          background-color: lightgrey;
+          text-indent: 50px;
+      }
+      #footer {
+          clear: both;
+          position: fixed;
+          background: black;
+          color: white;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: auto; /* Height of the footer */
+          text-align: center;
+      }
+  %body
+  %br/
+  %br/
+  %center
+    %h1.w3-center Ride Me !!!
+    .w3-content.w3-section{:style => "max-width:80%;"}
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Description :
+        %p
+          Ride Me is a MSU students project for Software ingeering. The main idea behind this is how to reduce the amount of cars that are going to the same event by using a common car.
+          This look like Uber but on a free way and should help people to meet new people and to get along with them on a road trip. What better than a road trip to make new friends?
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 How to use ?
+        %p
+          Ride Me is easy to use. First sign up by clicking
+          %b sign up
+          on the top. Provide the informations that have been asked and the sign up is free. You will be redirect to the coming
+          event as soon as you get signed in. By clicking on the specific event you can now join the event and get more info about it. Have fun :)
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Contacts :
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("kokou.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Kokou Kingbede : kokou.kingbede@mnsu.edu
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("niraj.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Niraj Gupta : gupta.niraz@gmail.com
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("nafi.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Nafi Nafuil Karim : nafiul-karim.nafi@mnsu.edu
+        %p{:style => "text-align : left;"}
+          %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          Barry : barryj217@yahoo.com
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Snapshots :
+          %img{:src =>  asset_path("car3.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("car2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("girl.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("thank.png"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("thankride.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("thank2.jpg"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img1.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img2.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img3.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+          %img{:src =>  asset_path("img4.JPG"), :width => "15%",:height => "5%", :float => "right"}/
+      .mySlides
+        %header.w3-container.w3-blue
+          %h1 Contributors :
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Kokou Kingbede (Software Engineer ,Master in Computer Science, Programming and Networking):
+        %p Project Manager; Enthousiastic he push everyone to work as their best. He come up with the output and views(Html, Javascript...)
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Niraj Gupta (IT consultant , Master in Computer Science, Programing and Software testing):
+        %p Work on the ruby rails coding, Controller and models...
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Nafi Nafuil Karim (IT consultant , Bachelor in Computer Science, Programing and Software testing):
+        %p Work on the ruby rails coding too, Controller and models...
+        %p
+          %b{:style => "color: white; background-color: #4286f4;"} Barry(Master in Computer Science, Programing and Software testing, Actual Engineer at GGG) :
+        %p Create the database model and the CSS...
+        %p
+          Special Thanks to
+          %b Dr. Jonathan C. Hardwick
+          for his special advices and lessons during the accomplishment of this.
+  %a.w3-btn-floating.w3-display-left{:onclick => "plusDivs(-1)"} ❮
+  %a.w3-btn-floating.w3-display-right{:onclick => "plusDivs(1)"} ❯
+  :javascript
+    var myIndex = 0;
+    carousel();
+    var myIndex = 0;
+      carousel();
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+          showDivs(slideIndex += n);
+      }
+
+      function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = x.length }
+          for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+          }
+          x[slideIndex - 1].style.display = "block";
+      }
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 9000); // Change image every 10 seconds
+    }
+    function carOwner() {
+        alert($('#carOwnerSelect').val());
+        if ($('#carOwnerSelect').val() == "Y") {
+            $('#not_A_car_owner').hide();
+            $('#Car_owner').show();
+        } else {
+            $('#not_A_car_owner').show();
+            $('#Car_owner').hide();
+        }
+    }
+
