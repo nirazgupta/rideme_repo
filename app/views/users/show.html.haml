@@ -4,10 +4,15 @@
     = gravatar_for @user
     = link_to 'Edit Profile', edit_user_registration_path
 
+%div{:align => "center"}
+  = will_paginate @user_events
+  
 %h3 Events Added:
 
-- @user.events.each do |event|
+- @user_events.each do |event|
   .row
     .col-md-10.col-md-offset-1.col-xs-12
       = link_to event.EventDate, event_path(event)
-      
+
+%div{:align => "center"}
+  = will_paginate @user_events
