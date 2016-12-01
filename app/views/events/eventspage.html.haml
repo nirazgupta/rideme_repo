@@ -1,4 +1,6 @@
 %h1 Events
+%div{:align => "center"}
+  = will_paginate
 %table#events 
   %thead.tablehead 
     %tr   
@@ -30,5 +32,8 @@
       
 %AddSection
 = link_to 'New Event', new_event_path
+
+%div{:align => "center"}
+  = will_paginate
 
 

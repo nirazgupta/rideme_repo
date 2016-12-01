@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
     def eventspage
       #@events = Event.where("EventDate between date('now') and date('now' -365)")
-    @events = Event.where("EventDate >= DATE('now', 'weekday 0', '-180 days')")
+        @events = Event.where("EventDate >= DATE('now', 'weekday 0', '-180 days')")
+        @events = Event.paginate(page: params[:page], per_page: 5)
     end
     
     def CarryAmount
